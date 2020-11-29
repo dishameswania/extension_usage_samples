@@ -1,0 +1,26 @@
+resources:
+
+  - name: ansible_repo
+    type: playbook/gitrepo
+    syntaxVersion: latest
+    configuration:
+      GitHub : manishas_jfrog_github
+      gitUrl: https://github.com/manishas-jfrog/extension_usage_samples.git
+      gitBranch: main
+      gitRepoName: extension_usage_samples
+
+
+pipelines:
+  - name: ansible_pipeline
+    steps:
+      - name: extension_step
+        type: playbook/ansible_playbook
+        syntaxVersion: latest
+        configuration:
+          resourceName: ansible_repo
+          fileName: ./ansible_playbook/ansible.yml
+          inputResources:
+            - name: ansible_repo
+        execution:
+          onStart:
+            - echo "Preparing for work..."
