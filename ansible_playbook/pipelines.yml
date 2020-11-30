@@ -1,7 +1,7 @@
 resources:
 
   - name: ansible_repo
-    type: playbook/gitrepo
+    type: manishas/gitrepo
     syntaxVersion: latest
     configuration:
       GitHub : manishas_jfrog
@@ -14,7 +14,7 @@ pipelines:
   - name: ansible_pipeline
     steps:
       - name: ansible_step
-        type: playbook/ansible_playbook
+        type: manishas/ansible_playbook
         syntaxVersion: latest
         configuration:
           resourceName: ansible_repo
