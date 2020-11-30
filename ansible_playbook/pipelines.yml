@@ -4,7 +4,7 @@ resources:
     type: playbook/gitrepo
     syntaxVersion: latest
     configuration:
-      GitHub : manishas_jfrog_github
+      GitHub : manishas_jfrog
       gitUrl: https://github.com/manishas-jfrog/extension_usage_samples.git
       gitBranch: main
       gitRepoName: extension_usage_samples
@@ -13,7 +13,7 @@ resources:
 pipelines:
   - name: ansible_pipeline
     steps:
-      - name: extension_step
+      - name: ansible_step
         type: playbook/ansible_playbook
         syntaxVersion: latest
         configuration:
@@ -23,4 +23,4 @@ pipelines:
             - name: ansible_repo
         execution:
           onStart:
-            - echo "Preparing for work..."
+            - echo "Preparing to run playbook..."
