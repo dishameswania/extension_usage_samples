@@ -13,9 +13,9 @@ resources:
 pipelines:
   - name: ansible_pipeline
     steps:
-      - name: ansible_step
+      - name: ansible_step_v1
         type: ansible/ansiblePlaybook
-        syntaxVersion: latest
+        syntaxVersion: 1.0.0
         configuration:
           resourceName: ansible_repo
           fileName: ./ansiblePlaybook/ansible.yml
@@ -26,3 +26,12 @@ pipelines:
             - echo "Starting execution of ansible playbook..."
           onComplete:
             - echo "Completed execution of ansible playbook"
+
+      - name: ansible_step_latest
+        type: ansible/ansiblePlaybook
+        syntaxVersion: latest
+        configuration:
+          resourceName: ansible_repo
+          fileName: ./ansiblePlaybook/ansible.yml
+          inputResources:
+            - name: ansible_repo
