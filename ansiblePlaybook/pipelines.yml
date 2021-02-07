@@ -33,3 +33,6 @@ pipelines:
           fileName: ./ansiblePlaybook/ansible.yml
           inputResources:
             - name: ansible_repo
+              trigger: false
+          inputSteps:
+            - name: ansible_step_v1
