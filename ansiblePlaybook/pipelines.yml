@@ -9,12 +9,6 @@ resources:
       gitBranch: main
       gitRepoName: extension_usage_samples
 
-  - name: ansible_repo_orig
-    type: GitRepo
-    configuration:
-      gitProvider: manishas_jfrog
-      path: manishas-jfrog/extension_usage_samples
-
 pipelines:
   - name: ansible_pipeline
     steps:
@@ -38,7 +32,7 @@ pipelines:
         configuration:
           fileName: ./ansiblePlaybook/ansible.yml
           inputResources:
-            - name: ansible_repo_orig
+            - name: ansible_repo
 
       - name: Bash_step
         type: Bash
