@@ -33,13 +33,3 @@ pipelines:
           fileName: ./ansiblePlaybook/ansible.yml
           inputResources:
             - name: ansible_repo
-
-      - name: Bash_step
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: ansible_step_latest
-            - name: ansible_step_v1
-        execution:
-          onExecute:
-            - echo "Finished both playbooks"
