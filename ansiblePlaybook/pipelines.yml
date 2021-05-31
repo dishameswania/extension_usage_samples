@@ -4,8 +4,8 @@ resources:
     type: sourceControl/GitRepo
     syntaxVersion: 1.0.0
     configuration:
-      GitHub : manishas_jfrog
-      gitUrl: https://github.com/manishas-jfrog/extension_usage_samples.git
+      GitHub : dishameswania
+      gitUrl: https://github.com/dishameswania/extension_usage_samples.git
       gitBranch: main
       gitRepoName: extension_usage_samples
 
